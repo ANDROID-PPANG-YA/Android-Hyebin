@@ -3,6 +3,6 @@ package com.sopt.anroid_hyebin.util
 import android.content.Context
 import android.widget.Toast
 
-fun Context.shortToast(message: String) {
+fun Context.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
