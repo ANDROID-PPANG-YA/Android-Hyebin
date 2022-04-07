@@ -24,8 +24,10 @@ class SignUpActivity :
             tvFinish.setOnClickListener {
                 if(etName.text.isNotEmpty() && etId.text.isNotEmpty() && etPw.text.isNotEmpty()){
                     val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                        intent.putExtra("id", etId.text.toString())
+                        intent.putExtra("pw", etPw.text.toString())
+                        setResult(RESULT_OK, intent)
+                        finish()
                 } else {
                     toast(getString(R.string.sign_up_fail))
                 }
