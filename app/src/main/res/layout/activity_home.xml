@@ -43,7 +43,7 @@
                     android:id="@+id/tv_name_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="이름"
+                    android:text="@string/sign_up_name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +73,7 @@
                     android:id="@+id/tv_age_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="나이"
+                    android:text="@string/home_age"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -103,7 +103,7 @@
                     android:id="@+id/tv_mbti_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mbti"
+                    android:text="@string/home_mbti"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
