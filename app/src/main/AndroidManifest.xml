@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sopt.android_hyebin">
 
     <application
@@ -10,7 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHyebin">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.sign.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.sign.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
