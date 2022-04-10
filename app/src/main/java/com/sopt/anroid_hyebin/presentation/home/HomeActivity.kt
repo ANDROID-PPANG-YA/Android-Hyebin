@@ -19,7 +19,6 @@ class HomeActivity :
 
     private fun initViewModel() {
         binding.data = viewModel
-        binding.lifecycleOwner = this
     }
 
 }

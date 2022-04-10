@@ -17,15 +17,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/im_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
-                app:layout_constraintDimensionRatio="1:1"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="@{data.name}"
+                    android:text="@{data.homeData.name}"
                     app:layout_constraintStart_toEndOf="@+id/tv_name_question"
                     app:layout_constraintTop_toTopOf="@+id/tv_name_question"
                     tools:text="이혜빈" />
@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="@{data.age}"
+                    android:text="@{data.homeData.age}"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_age_question"
                     app:layout_constraintStart_toEndOf="@+id/tv_age_question"
                     app:layout_constraintTop_toTopOf="@+id/tv_age_question"
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="@{data.mbti}"
+                    android:text="@{data.homeData.mbti}"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_mbti_question"
                     app:layout_constraintStart_toEndOf="@+id/tv_mbti_question"
                     app:layout_constraintTop_toTopOf="@+id/tv_mbti_question"
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@{data.introduction}"
+                android:text="@{data.homeData.introduce}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_mbti"
