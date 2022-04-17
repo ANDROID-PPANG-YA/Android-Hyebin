@@ -23,7 +23,6 @@ abstract class BaseActivity<T : ViewDataBinding>(
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
     }
 
 }

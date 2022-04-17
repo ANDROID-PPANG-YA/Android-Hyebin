@@ -30,108 +30,57 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_name"
+
+            <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@{@string/sign_up_name +  ':'  + data.homeData.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/im_img">
+                app:layout_constraintTop_toBottomOf ="@+id/im_img"
+                tools:text="이름"/>
 
-                <TextView
-                    android:id="@+id/tv_name_question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sign_up_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_name_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@{data.homeData.name}"
-                    app:layout_constraintStart_toEndOf="@+id/tv_name_question"
-                    app:layout_constraintTop_toTopOf="@+id/tv_name_question"
-                    tools:text="이혜빈" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_age"
+            <TextView
+                android:id="@+id/tv_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                app:layout_constraintEnd_toEndOf="@+id/cl_name"
-                app:layout_constraintStart_toStartOf="@+id/cl_name"
-                app:layout_constraintTop_toBottomOf="@+id/cl_name">
+                android:layout_marginTop="24dp"
+                android:text="@{@string/home_age +  ':'  + data.homeData.age}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_name"
+                tools:text="나이" />
+
+
+
 
                 <TextView
-                    android:id="@+id/tv_age_question"
+                    android:id="@+id/tv_mbti"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_age"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginTop="24dp"
+                    android:text="@{@string/home_mbti + ':' + data.homeData.mbti}"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_age"
+                    app:layout_constraintStart_toStartOf="@+id/tv_age"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_age"
+                    app:layout_constraintTop_toTopOf="@+id/tv_age"
+                    tools:text="mbti"/>
 
-                <TextView
-                    android:id="@+id/tv_age_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@{data.homeData.age}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_age_question"
-                    app:layout_constraintStart_toEndOf="@+id/tv_age_question"
-                    app:layout_constraintTop_toTopOf="@+id/tv_age_question"
-                    tools:text="23" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_mbti"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                app:layout_constraintEnd_toEndOf="@+id/cl_age"
-                app:layout_constraintStart_toStartOf="@+id/cl_age"
-                app:layout_constraintTop_toBottomOf="@+id/cl_age">
-
-                <TextView
-                    android:id="@+id/tv_mbti_question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/home_mbti"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_mbti_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@{data.homeData.mbti}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_mbti_question"
-                    app:layout_constraintStart_toEndOf="@+id/tv_mbti_question"
-                    app:layout_constraintTop_toTopOf="@+id/tv_mbti_question"
-                    tools:text="23" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <TextView
-                android:id="@+id/tv_introduce_answer"
+                android:id="@+id/tv_introduce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="24dp"
                 android:text="@{data.homeData.introduce}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_mbti"
+                app:layout_constraintEnd_toEndOf="@+id/tv_mbti"
+                app:layout_constraintStart_toStartOf="@+id/tv_mbti"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mbti"
+                app:layout_constraintTop_toTopOf="@+id/tv_mbti"
                 tools:text="소개" />
 
 
