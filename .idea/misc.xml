@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.4" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.152" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
-        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_follower.xml" value="0.10511651469098278" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_follower.xml" value="0.2" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_repository.xml" value="0.1" />
       </map>
     </option>
