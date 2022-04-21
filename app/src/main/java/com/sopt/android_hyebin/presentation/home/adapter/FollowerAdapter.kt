@@ -1,15 +1,18 @@
 package com.sopt.android_hyebin.presentation.home.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.sopt.android_hyebin.data.FollowerData
 import com.sopt.android_hyebin.databinding.ItemFollowerListBinding
+import com.sopt.android_hyebin.presentation.home.DetailActivity
 
 class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {
-    val userList = mutableListOf<FollowerData>()
+    val followerList = mutableListOf<FollowerData>()
 
-    class FollowerViewHolder(private val binding : ItemFollowerListBinding) : RecyclerView.ViewHolder(binding.root){
+    class FollowerViewHolder(val binding : ItemFollowerListBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(data: FollowerData) {
             binding.tvName.text = data.name
             binding.tvIntroduction.text = data.introduction
@@ -23,8 +26,15 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
     }
 
     override fun onBindViewHolder(holder: FollowerViewHolder, position: Int) {
-        holder.onBind(userList[position])
+        holder.onBind(followerList[position])
+        holder.binding.root.setOnClickListener {
+            val intent = Intent(holder.itemView?.context, DetailActivity::class.java)
+            intent.putExtra("userName", followerList[position].name)
+            intent.putExtra("userIntroduce", followerList[position].introduction)
+            startActivity(holder.itemView.context, intent, null)
+
+        }
     }
 
-    override fun getItemCount(): Int = userList.size
+    override fun getItemCount(): Int = followerList.size
 }

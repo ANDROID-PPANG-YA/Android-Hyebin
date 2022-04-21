@@ -19,12 +19,15 @@ class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment
         followerAdapter = FollowerAdapter()
         binding.rvFollower.adapter = followerAdapter
 
-        followerAdapter.userList.addAll(
+        followerAdapter.followerList.addAll(
             listOf(
                 FollowerData("이혜빈1", "안녕하세요"),
                 FollowerData("이혜빈2", "안녕하세요"),
                 FollowerData("이혜빈3", "안녕하세요"),
-                FollowerData("이혜빈4", "안녕하세요")
+                FollowerData("이혜빈4", "안녕하세요"),
+                FollowerData("이혜빈5", "안녕하세요"),
+                FollowerData("이혜빈6", "안녕하세요"),
+                FollowerData("이혜빈7", "안녕하세요")
             )
         )
         followerAdapter.notifyDataSetChanged()

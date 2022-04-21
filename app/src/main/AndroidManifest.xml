@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHyebin">
         <activity
+            android:name=".presentation.home.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.sign.SignUpActivity"
             android:exported="true" />
         <activity

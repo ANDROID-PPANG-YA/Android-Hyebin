@@ -57,6 +57,7 @@ dependencies {
 
     // Androidx Security
     implementation(AndroidXDependencies.security)
+    implementation("com.google.android.material:material:1.5.0")
     testImplementation(TestDependencies.jUnit)
     androidTestImplementation(TestDependencies.androidTest)
     androidTestImplementation(TestDependencies.espresso)
