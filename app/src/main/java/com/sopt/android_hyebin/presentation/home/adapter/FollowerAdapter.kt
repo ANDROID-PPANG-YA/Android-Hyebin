@@ -29,8 +29,8 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
         holder.onBind(followerList[position])
         holder.binding.root.setOnClickListener {
             val intent = Intent(holder.itemView?.context, DetailActivity::class.java)
-            intent.putExtra("userName", followerList[position].name)
-            intent.putExtra("userIntroduce", followerList[position].introduction)
+            intent.putExtra("name", followerList[position].name)
+            intent.putExtra("introduction", followerList[position].introduction)
             startActivity(holder.itemView.context, intent, null)
 
         }

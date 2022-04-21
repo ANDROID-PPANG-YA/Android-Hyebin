@@ -18,8 +18,8 @@ class DetailActivity :
     }
 
     private fun initDetail() {
-        val name = intent.getStringExtra("userName")
-        val introduce = intent.getStringExtra("userIntroduce")
+        val name = intent.getStringExtra("name")
+        val introduce = intent.getStringExtra("introduction")
         binding.tvName.text = name
         binding.tvIntroduction.text = introduce
     }
