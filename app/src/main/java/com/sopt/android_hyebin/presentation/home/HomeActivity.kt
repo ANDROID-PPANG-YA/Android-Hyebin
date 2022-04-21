@@ -23,9 +23,9 @@ class HomeActivity :
         binding.data = viewModel
     }
 
-    fun initTransactionEvent() {
+    private fun initTransactionEvent() {
         val followerFragment = FollowerFragment()
-        val repositstoryFragment = RepositoryFragment()
+        val repositoryFragment = RepositoryFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.fragment_container, followerFragment).commit()
 
@@ -34,7 +34,7 @@ class HomeActivity :
         }
 
         binding.tvRepository.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, repositstoryFragment).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, repositoryFragment).commit()
         }
 
     }

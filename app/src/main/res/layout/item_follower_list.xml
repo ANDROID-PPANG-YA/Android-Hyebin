@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--
         <ImageView
             android:id="@+id/iv_img"
             android:layout_width="50dp"
@@ -21,16 +22,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+-->
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:text="이름"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/iv_img"
-            app:layout_constraintTop_toTopOf="@+id/iv_img" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_introduction"

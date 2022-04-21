@@ -11,15 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_main"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_repository"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/teal_700"
-            android:text="repository"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_repository_list" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
