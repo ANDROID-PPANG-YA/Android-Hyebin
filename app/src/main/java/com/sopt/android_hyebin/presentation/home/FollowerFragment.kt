@@ -2,10 +2,13 @@ package com.sopt.android_hyebin.presentation.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.data.FollowerData
 import com.sopt.android_hyebin.databinding.FragmentFollowerBinding
 import com.sopt.android_hyebin.presentation.home.adapter.FollowerAdapter
+import com.sopt.android_hyebin.util.ItemDecoration
 import com.sopt.anroid_hyebin.util.BaseFragment
 
 class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment_follower) {
@@ -13,6 +16,7 @@ class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        recyclerViewDecoration()
     }
 
     private fun initAdapter() {
@@ -31,5 +35,16 @@ class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment
             )
         )
         followerAdapter.notifyDataSetChanged()
+    }
+
+    private fun recyclerViewDecoration() {
+        val spaceDecoration = ItemDecoration(10)
+        val dividerItemDecoration =
+            DividerItemDecoration(
+                binding.rvFollower.context,
+                LinearLayoutManager(requireContext()).orientation
+            )
+        binding.rvFollower.addItemDecoration(dividerItemDecoration)
+        binding.rvFollower.addItemDecoration(spaceDecoration)
     }
 }
