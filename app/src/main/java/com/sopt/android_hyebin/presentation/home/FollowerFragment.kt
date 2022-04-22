@@ -38,7 +38,7 @@ class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment
     }
 
     private fun recyclerViewDecoration() {
-        val spaceDecoration = ItemDecoration(10)
+        val spaceDecoration = ItemDecoration(16)
         val dividerItemDecoration =
             DividerItemDecoration(
                 binding.rvFollower.context,
