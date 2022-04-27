@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.4" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable-v24/rectangle_border_purple_10dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_black_gradient.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_purple_gradient.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_detail.xml" value="0.23356401384083045" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_follower.xml" value="0.15087719298245614" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_repository.xml" value="0.21064814814814814" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_follow_list.xml" value="0.2" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_follower_list.xml" value="0.264" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.1" />
       </map>
     </option>
   </component>

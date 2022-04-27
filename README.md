@@ -156,3 +156,188 @@ android:text="@{data.homeData.name}"
 ✌ mvvm과 databinding의 개념을다시 잡는 시간을 가졌습니다.
 
 👌 groovy에서 kts로  법을 익혔습니다.
+
+
+<br><br><br>
+
+# 2️⃣ Second Week
+
+<br>
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/69586104/164644152-f5fc6fb0-7d3e-45b5-901b-ebc1d3269b5a.gif)
+
+
+
+<br><br><br>
+
+**1. HomeActivity**
+<br>
+fragment transaction는 아래와 같은 코드를 콩해 구현했습니다.
+
+```kotlin
+private fun initTransactionEvent() {
+        val followerFragment = FollowerFragment()
+        val repositoryFragment = RepositoryFragment()
+
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, followerFragment).commit()
+
+        binding.tvFollower.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, followerFragment).commit()
+        }
+
+        binding.tvRepository.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, repositoryFragment).commit()
+        }
+
+    }
+```
+
+<br><br>
+  + FollowerFragment
+
+```kotlin
+private fun initAdapter() {
+        followerAdapter = FollowerAdapter()
+        binding.rvFollower.adapter = followerAdapter
+
+        followerAdapter.followerList.addAll(
+            listOf(
+                FollowerData("이혜빈1", "안녕하세요"),
+                FollowerData("이혜빈2", "안녕하세요"),
+                FollowerData("이혜빈3", "안녕하세요"),
+                FollowerData("이혜빈4", "안녕하세요"),
+                FollowerData("이혜빈5", "안녕하세요"),
+                FollowerData("이혜빈6", "안녕하세요"),
+                FollowerData("이혜빈7", "안녕하세요")
+            )
+        )
+        followerAdapter.notifyDataSetChanged()
+    }
+```
+
+
+<br><br><br>
+
+**FollowerAdapter**
+```kotlin
+class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {
+    val followerList = mutableListOf<FollowerData>()
+
+    class FollowerViewHolder(val binding : ItemFollowerListBinding) : RecyclerView.ViewHolder(binding.root){
+        fun onBind(data: FollowerData) {
+            binding.tvName.text = data.name
+            binding.tvIntroduction.text = data.introduction
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowerViewHolder {
+        val binding = ItemFollowerListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
+        return FollowerViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: FollowerViewHolder, position: Int) {
+        holder.onBind(followerList[position])
+        holder.binding.root.setOnClickListener {
+            val intent = Intent(holder.itemView?.context, DetailActivity::class.java)
+            intent.putExtra("name", followerList[position].name)
+            intent.putExtra("introduction", followerList[position].introduction)
+            startActivity(holder.itemView.context, intent, null)
+
+        }
+    }
+
+    override fun getItemCount(): Int = followerList.size
+}
+```
+<br><br>
+
+  + activity_home.xml
+```kotlin
+<androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_btn" />
+```
+<br><br>
+
+  + fragment_follower.xml
+
+<br>
+
+```kotlin
+<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_follower"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_follower_list" />
+```
+
+<br><br>
+
+**2. DetailActivity**
+  + followerAdapter에서 item 파악 후, intent로 넘겨주기
+```kotlin
+    private fun initDetail() {
+        val name = intent.getStringExtra("name")
+        val introduce = intent.getStringExtra("introduction")
+        binding.tvName.text = name
+        binding.tvIntroduction.text = introduce
+    }
+```
+
+**3. ItemDecoration**
+  + swip 했을 때 같이 넘어가는게 큰 문제점이라고 파악해서, 구분 선만 추가했습니다.
+```kotlin
+    private fun recyclerViewDecoration() {
+        val spaceDecoration = ItemDecoration(16)
+        val dividerItemDecoration =
+            DividerItemDecoration(
+                binding.rvFollower.context,
+                LinearLayoutManager(requireContext()).orientation
+            )
+        binding.rvFollower.addItemDecoration(dividerItemDecoration)
+        binding.rvFollower.addItemDecoration(spaceDecoration)
+    }
+```
+
+<br>
+
+ + 아래와 같은 방식으로 Activity에서 해당 Fragment에서 활용합니다.
+```kotlin
+    private fun recyclerViewDecoration() {
+        val spaceDecoration = ItemDecoration(16)
+        val dividerItemDecoration =
+            DividerItemDecoration(
+                binding.rvFollower.context,
+                LinearLayoutManager(requireContext()).orientation
+            )
+        binding.rvFollower.addItemDecoration(dividerItemDecoration)
+        binding.rvFollower.addItemDecoration(spaceDecoration)
+    }
+```
+
+<br><br>
+
+<br>
+
+**🤍이번 과제를 통해 배운 내용🤍**
+
+<br>
+
+☝ itemDecoration에 대해 더욱 공부해야되겠다고 생각했습니다.
+
+✌ 시험기간으로 인해 스와이프 등등 recyclerview item에 대해 다루다가 말았는데... 꼭 시간내서 공부를 해야겠다고 느꼈습니다! 시험끝나고 꼭 할거에요 진짜진짜
+
+👌 코드를 깔끔하게 짜기 위해서는 충분히 시간을 투자해야겠다고 생각했습니다... 데이터를 다루는 부분 등등에서 아쉬운 부분이 많은데 우선 제출하고.. 후에 리팩토링 하겠습니다!
