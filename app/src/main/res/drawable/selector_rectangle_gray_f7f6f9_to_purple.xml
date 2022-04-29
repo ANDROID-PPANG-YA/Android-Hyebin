@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/rectangle_fill_sopt_main_purple_5dp" android:state_selected="true" />
+    <item android:drawable="@drawable/rectangle_border_purple_5dp" android:state_selected="true" />
     <item android:drawable="@drawable/rectangle_fill_gray_f7f6f9_5dp" android:state_selected="false"/>
 </selector>

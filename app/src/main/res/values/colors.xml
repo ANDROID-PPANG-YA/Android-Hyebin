@@ -16,6 +16,7 @@
     <color name="gray_b5">#B5B5B5</color>
     <color name="thesopt_deepgray">#444444</color>
     <color name="thesopt_ligthgray">#DFDAED</color>
+    <color name="thesopt_darkgray">#727272</color>
     <color name="gray_8f">#8F8F8F</color>
     <color name="gray_f7f6f9">#F7F6F9</color>
 </resources>
