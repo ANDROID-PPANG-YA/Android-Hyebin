@@ -4,7 +4,7 @@
     <!-- 로그인 -->
     <string name="sign_in_title">SOPT</string>
     <string name="sign_in_id">깃허브 아이디</string>
-    <string name="sign_in_id_hint">아이디를 입력해주세요.</string>
+    <string name="sign_in_id_hint">깃허브 아이디를 입력해주세요.</string>
     <string name="sign_in_pw">비밀번호</string>
     <string name="sign_in_pw_hint">비밀번호를 입력해주세요.</string>
     <string name="sign_in_login">로그인</string>
