@@ -10,29 +10,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_title"
+        <ImageView
+            android:id="@+id/iv_github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in_title"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:layout_marginTop="80dp"
+            android:src="@drawable/ic_github"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="66dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="40dp"
             android:text="@string/sign_in_id"
+            android:fontFamily="@font/notosanskr_bold"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="14sp"
+            android:includeFontPadding="false"
             android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_github" />
 
         <EditText
             android:id="@+id/et_id"
