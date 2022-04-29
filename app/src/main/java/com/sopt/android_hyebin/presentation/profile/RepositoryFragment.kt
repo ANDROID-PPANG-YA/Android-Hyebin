@@ -1,11 +1,11 @@
-package com.sopt.android_hyebin.presentation.home
+package com.sopt.android_hyebin.presentation.profile
 
 import android.os.Bundle
 import android.view.View
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.data.RepositoryData
 import com.sopt.android_hyebin.databinding.FragmentRepositoryBinding
-import com.sopt.android_hyebin.presentation.home.adapter.RepositoryAdapter
+import com.sopt.android_hyebin.presentation.profile.adapter.RepositoryAdapter
 import com.sopt.anroid_hyebin.util.BaseFragment
 
 class RepositoryFragment : BaseFragment<FragmentRepositoryBinding>(R.layout.fragment_repository) {

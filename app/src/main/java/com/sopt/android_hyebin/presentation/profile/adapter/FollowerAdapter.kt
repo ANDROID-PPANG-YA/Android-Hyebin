@@ -1,4 +1,4 @@
-package com.sopt.android_hyebin.presentation.home.adapter
+package com.sopt.android_hyebin.presentation.profile.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.sopt.android_hyebin.data.FollowerData
 import com.sopt.android_hyebin.databinding.ItemFollowerListBinding
-import com.sopt.android_hyebin.presentation.home.DetailActivity
+import com.sopt.android_hyebin.presentation.profile.DetailActivity
 
 class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {
     val followerList = mutableListOf<FollowerData>()

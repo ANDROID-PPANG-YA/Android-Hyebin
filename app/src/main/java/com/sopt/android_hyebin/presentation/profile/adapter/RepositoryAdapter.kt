@@ -1,4 +1,4 @@
-package com.sopt.android_hyebin.presentation.home.adapter
+package com.sopt.android_hyebin.presentation.profile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

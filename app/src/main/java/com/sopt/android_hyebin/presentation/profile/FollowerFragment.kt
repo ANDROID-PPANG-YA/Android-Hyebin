@@ -1,4 +1,4 @@
-package com.sopt.android_hyebin.presentation.home
+package com.sopt.android_hyebin.presentation.profile
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.data.FollowerData
 import com.sopt.android_hyebin.databinding.FragmentFollowerBinding
-import com.sopt.android_hyebin.presentation.home.adapter.FollowerAdapter
+import com.sopt.android_hyebin.presentation.profile.adapter.FollowerAdapter
 import com.sopt.android_hyebin.util.ItemDecoration
 import com.sopt.anroid_hyebin.util.BaseFragment
 

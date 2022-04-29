@@ -2,20 +2,15 @@ package com.sopt.android_hyebin.presentation.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.databinding.FragmentProfileBinding
-import com.sopt.android_hyebin.presentation.home.FollowerFragment
-import com.sopt.android_hyebin.presentation.home.RepositoryFragment
-import com.sopt.anroid_hyebin.presentation.home.HomeViewModel
 import com.sopt.anroid_hyebin.util.BaseFragment
 
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +35,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
         }
 
         binding.tvRepository.setOnClickListener {
-            childFragmentChange(R.id.fragment_container,RepositoryFragment())
+            childFragmentChange(R.id.fragment_container, RepositoryFragment())
             binding.tvRepository.isSelected = true
             binding.tvFollower.isSelected = false
 

@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.sopt.anroid_hyebin.presentation.home.HomeViewModel" />
+            type="com.sopt.android_hyebin.presentation.profile.ProfileViewModel" />
     </data>
 
 
@@ -43,7 +43,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
-                android:text="@{data.homeData.name}"
+                android:text="@{data.User.name}"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
                 android:layout_marginTop="3dp"
                 android:fontFamily="@font/notosanskr_regular"
                 android:includeFontPadding="false"
-                android:text="@{data.homeData.age}"
+                android:text="@{data.User.age}"
                 android:textColor="@color/thesopt_ligthgray"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_name"
@@ -75,7 +75,7 @@
                 android:layout_marginBottom="31dp"
                 android:fontFamily="@font/notosanskr_medium"
                 android:includeFontPadding="false"
-                android:text="@{data.homeData.mbti}"
+                android:text="@{data.User.mbti}"
                 android:textColor="@color/gray_8f"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
