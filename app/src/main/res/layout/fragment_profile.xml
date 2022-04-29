@@ -10,20 +10,25 @@
             type="com.sopt.anroid_hyebin.presentation.home.HomeViewModel" />
     </data>
 
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/thesopt_deepgray"
+            app:layout_constraintTop_toTopOf="parent">
+
 
             <ImageView
                 android:id="@+id/im_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -35,97 +40,106 @@
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@{@string/sign_up_name +  ':'  + data.homeData.name}"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:text="@{data.homeData.name}"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/im_img"
-                tools:text="이름" />
+                tools:text="LeeHyebin" />
 
             <TextView
                 android:id="@+id/tv_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@{@string/home_age +  ':'  + data.homeData.age}"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:includeFontPadding="false"
+                android:text="@{data.homeData.age}"
+                android:textColor="@color/thesopt_ligthgray"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_name"
                 app:layout_constraintStart_toStartOf="@+id/tv_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_name"
-                app:layout_constraintTop_toTopOf="@+id/tv_name"
-                tools:text="나이" />
+                tools:text="id" />
 
 
             <TextView
                 android:id="@+id/tv_mbti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@{@string/home_mbti + ':' + data.homeData.mbti}"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="31dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@{data.homeData.mbti}"
+                android:textColor="@color/gray_8F"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tv_age"
                 app:layout_constraintStart_toStartOf="@+id/tv_age"
                 app:layout_constraintTop_toBottomOf="@+id/tv_age"
-                app:layout_constraintTop_toTopOf="@+id/tv_age"
                 tools:text="mbti" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_btn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_mbti">
-
-
-                <TextView
-                    android:id="@+id/tv_follower"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectangle_purple_gradient"
-                    android:paddingLeft="28dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="28dp"
-                    android:paddingBottom="4dp"
-                    android:layout_marginEnd="11dp"
-                    android:text="@string/home_follow_list"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_repository"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_repository"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectangle_black_gradient"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="12dp"
-                    android:paddingBottom="4dp"
-                    android:text="@string/home_repository_list"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_follower"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tv_follower" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_btn" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rectangle_gray_F7F6F9_to_purple"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:paddingStart="45dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="45dp"
+                android:paddingBottom="13dp"
+                android:text="@string/home_follow_list"
+                android:textColor="@drawable/selector_text_gray_to_main_purple"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rectangle_gray_F7F6F9_to_purple"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:paddingStart="34dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="35dp"
+                android:paddingBottom="13dp"
+                android:text="@string/home_repository_list"
+                android:textColor="@drawable/selector_text_gray_to_main_purple"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
