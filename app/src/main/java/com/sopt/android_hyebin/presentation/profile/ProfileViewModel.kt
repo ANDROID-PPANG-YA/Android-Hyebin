@@ -7,7 +7,6 @@ import com.sopt.android_hyebin.data.HomeData
 
 class ProfileViewModel : ViewModel() {
 
-    val User = HomeData(R.drawable.ic_launcher_background,"이혜빈", "@hea_ven_00", "토킹포테이토")
+    val User = HomeData(R.drawable.ic_launcher_background,"이혜빈", "@hea_ven_00", "토킹포테이토? 아니 말도 못하는 포테이토")
 
-    val Follower = FollowerData(0,"","")
 }
