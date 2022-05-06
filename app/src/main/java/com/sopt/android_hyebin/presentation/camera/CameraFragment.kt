@@ -29,9 +29,9 @@ class CameraFragment : BaseFragment<FragmentCameraBinding>(R.layout.fragment_cam
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvAdd.setOnClickListener {
-            aboutPermission()
-        }
+
+        aboutPermission()
+
     }
 
 
