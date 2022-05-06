@@ -41,5 +41,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--camera-->
+    <string name="camera_title">사진을 첨부해주세요</string>
+    <string name="camera_enter">입장하기</string>
+
 
 </resources>

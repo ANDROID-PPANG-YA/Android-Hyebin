@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sopt.android_hyebin" >
 
+    <!--권한추가-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,5 +32,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>

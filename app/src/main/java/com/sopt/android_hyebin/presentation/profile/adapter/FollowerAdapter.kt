@@ -14,8 +14,10 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
 
     class FollowerViewHolder(val binding : ItemFollowerListBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(data: FollowerData) {
-            binding.tvName.text = data.name
-            binding.tvIntroduction.text = data.introduction
+           binding.apply {
+               //follow = data
+               executePendingBindings()
+           }
         }
     }
 

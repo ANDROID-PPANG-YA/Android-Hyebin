@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.data.FollowerData
 import com.sopt.android_hyebin.databinding.FragmentFollowerBinding
@@ -25,17 +26,18 @@ class FollowerFragment : BaseFragment<FragmentFollowerBinding>(R.layout.fragment
 
         followerAdapter.followerList.addAll(
             listOf(
-                FollowerData("이혜빈1", "안녕하세요"),
-                FollowerData("이혜빈2", "안녕하세요"),
-                FollowerData("이혜빈3", "안녕하세요"),
-                FollowerData("이혜빈4", "안녕하세요"),
-                FollowerData("이혜빈5", "안녕하세요"),
-                FollowerData("이혜빈6", "안녕하세요"),
-                FollowerData("이혜빈7", "안녕하세요")
+                FollowerData(R.drawable.ic_launcher_background, "이혜빈1", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈2", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈3", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈4", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈5", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈6", "안녕하세요"),
+                FollowerData(R.drawable.ic_launcher_background,"이혜빈7", "안녕하세요")
             )
         )
         followerAdapter.notifyDataSetChanged()
     }
+
 
     private fun recyclerViewDecoration() {
         val spaceDecoration = ItemDecoration(16)
