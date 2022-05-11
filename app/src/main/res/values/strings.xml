@@ -3,11 +3,11 @@
 
     <!-- 로그인 -->
     <string name="sign_in_title">SOPT</string>
-    <string name="sign_in_id">아이디</string>
-    <string name="sign_in_id_hint">아이디를 입력해주세요.</string>
+    <string name="sign_in_id">깃허브 아이디</string>
+    <string name="sign_in_id_hint">깃허브 아이디를 입력해주세요.</string>
     <string name="sign_in_pw">비밀번호</string>
     <string name="sign_in_pw_hint">비밀번호를 입력해주세요.</string>
-    <string name="sign_in_login">LOGIN</string>
+    <string name="sign_in_login">로그인</string>
     <string name="sign_in_sign_up">회원가입</string>
     <string name="sign_success">로그인 성공</string>
     <string name="sign_fail">아이디/비밀번호를 확인해주세요</string>
@@ -25,8 +25,25 @@
     <string name="home_name_repo">레포이름</string>
     <string name="home_introduction_repo">레포소개</string>
     <string name="home_description">설명</string>
-    <string name="home_follow_list">팔로우 \n목록</string>
-    <string name="home_repository_list">레포지토리 \n목록</string>
+    <string name="home_follow_list">팔로우 목록</string>
+    <string name="home_repository_list">레포지토리 목록</string>
+
+    <!--menu-->
+    <string name="text_profile">프로필</string>
+    <string name="text_home">홈</string>
+    <string name="text_camera">카메라</string>
+
+    <!--home-->
+    <string name="text_following">팔로잉</string>
+    <string name="text_follower">팔로워</string>
+    <string name="text_github">GitHub</string>
+    <string name="home_ready">준비중입니다</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--camera-->
+    <string name="camera_title">사진을 첨부해주세요</string>
+    <string name="camera_enter">입장하기</string>
 
 
 </resources>

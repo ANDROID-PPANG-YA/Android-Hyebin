@@ -1,8 +1,8 @@
-package com.sopt.anroid_hyebin.data
+package com.sopt.android_hyebin.data
 
 data class HomeData (
+    val image: Int,
     val name : String,
     val age : String,
-    val mbti : String,
-    val introduce : String
+    val mbti : String
 )

@@ -341,3 +341,212 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
 ✌ 시험기간으로 인해 스와이프 등등 recyclerview item에 대해 다루다가 말았는데... 꼭 시간내서 공부를 해야겠다고 느꼈습니다! 시험끝나고 꼭 할거에요 진짜진짜
 
 👌 코드를 깔끔하게 짜기 위해서는 충분히 시간을 투자해야겠다고 생각했습니다... 데이터를 다루는 부분 등등에서 아쉬운 부분이 많은데 우선 제출하고.. 후에 리팩토링 하겠습니다!
+
+<br><br><br><br>
+
+# 3️⃣ Third Week
+
+|gif|
+|---|
+|![ezgif com-gif-maker](https://user-images.githubusercontent.com/69586104/167091076-e200d76d-c3c7-464d-abde-89a0ec4153a3.gif)|
+
+<br><br>
+
+## LEVEL1
+
+<br><br>
+
+**1-1. 과제에 폰트 적용하기**
+
+
+```kotlin
+android:text="@string/sign_in_sign_up"
+android:textSize="25sp"
+android:textColor="@color/sopt_black"
+android:fontFamily="@font/notosanskr_bold"
+```
+
+<br><br>
+
+**1-2. 버튼 Selector 활용하기**
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/rectangle_fill_sopt_main_purple_5dp" android:state_selected="true" />
+    <item android:drawable="@drawable/rectangle_fill_f6f5f9_border_gray_radius_5dp" android:state_selected="false"/>
+</selector>
+```
+
+<br><br>
+
+**1-3. 이미지 원형으로 보이게하기**
+
+```kotlin
+    @JvmStatic
+    @BindingAdapter("imageBind")
+    fun setImage(imageView: ImageView, imageUrl: Int) {
+        Glide.with(imageView.context)
+            .load(imageUrl)
+            .circleCrop()
+            .into(imageView)
+
+    }
+```
+
+<br><br>
+✍bindingAdapter를 사용하여 xml에서 처리했습니다.
+<br>
+
+**1-4. 깃허브 이미지 export하여 사용했습니다!**
+
+<br><br>
+
+**1-5. Activiy 하단에 BottomNavigaton 넣어주기**
+
+```kotlin
+<com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:itemIconTint="@drawable/selector_bottom_navi"
+            app:itemRippleColor="#6424D5"
+            app:itemTextColor="@drawable/selector_bottom_navi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu" />
+```
+
+<br><br>
+
+
+**2. 중첩스크롤 문제 해결하기**
+
+```kotlin
+class NestedScrollableHost : FrameLayout {
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+
+    private var touchSlop = 0
+    private var initialX = 0f
+    private var initialY = 0f
+    private val parentViewPager: ViewPager2?
+        get() {
+            var v: View? = parent as? View
+            while (v != null && v !is ViewPager2) {
+                v = v.parent as? View
+            }
+            return v as? ViewPager2
+        }
+
+    private val child: View? get() = if (childCount > 0) getChildAt(0) else null
+
+    init {
+        touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+    }
+
+    private fun canChildScroll(orientation: Int, delta: Float): Boolean {
+        val direction = -delta.sign.toInt()
+        return when (orientation) {
+            0 -> child?.canScrollHorizontally(direction) ?: false
+            1 -> child?.canScrollVertically(direction) ?: false
+            else -> throw IllegalArgumentException()
+        }
+    }
+
+    override fun onInterceptTouchEvent(e: MotionEvent): Boolean {
+        handleInterceptTouchEvent(e)
+        return super.onInterceptTouchEvent(e)
+    }
+
+    private fun handleInterceptTouchEvent(e: MotionEvent) {
+        val orientation = parentViewPager?.orientation ?: return
+
+        if (!canChildScroll(orientation, -1f) && !canChildScroll(orientation, 1f)) {
+            return
+        }
+
+        if (e.action == MotionEvent.ACTION_DOWN) {
+            initialX = e.x
+            initialY = e.y
+            parent.requestDisallowInterceptTouchEvent(true)
+        } else if (e.action == MotionEvent.ACTION_MOVE) {
+            val dx = e.x - initialX
+            val dy = e.y - initialY
+            val isVpHorizontal = orientation == ORIENTATION_HORIZONTAL
+
+            val scaledDx = dx.absoluteValue * if (isVpHorizontal) .5f else 1f
+            val scaledDy = dy.absoluteValue * if (isVpHorizontal) 1f else .5f
+
+            if (scaledDx > touchSlop || scaledDy > touchSlop) {
+                if (isVpHorizontal == (scaledDy > scaledDx)) {
+                    parent.requestDisallowInterceptTouchEvent(false)
+                } else {
+                    if (canChildScroll(orientation, if (isVpHorizontal) dx else dy)) {
+                        parent.requestDisallowInterceptTouchEvent(true)
+                    } else {
+                        parent.requestDisallowInterceptTouchEvent(false)
+                    }
+                }
+            }
+        }
+    }
+
+```
+✍NestedScrollableHost 공식문서 코드를 참고하여 작성하였습니다.
+
+<br><br>
+
+**3. 갤러리에서 받아온 이미지 화면에 띄우기**
+
+```kotlin
+    private fun aboutPermission() {
+        binding.tvAdd.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                selectImage()
+            } else if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_DENIED
+            ) {
+                requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        }
+    }
+
+
+    private fun selectImage() {
+        getContent.launch("image/*")
+    }
+```
+
+✍permission을 통해 권한을 요청하고, 그에 따라 처리를 하도록 코드를 작성했습니다.
+
+<br><br>
+
+
+
+**🤍이번 과제를 통해 배운 내용 & 성장한 내용🤍**
+
+<br>
+
+**☝ViewPager2 중첩스크롤에 대해 알아봤습니다.**
+<br>
+저번기수에 활동할 때에는 포기를 했던 부분이었는데, 이번 기회를 통해 공식문서와 공식 코드를 찾아보며 공부하는 시간을 가졌습니다.
+<br>
+사실 완전히 이해는 하지 못했지만, 차차 더 공부해보겠습니다..
+<br><br>
+
+**✌갤러리 접근에 대해 이해했습니다.**
+<br>
+사실 솝커톤 당시에는 아무렇게나 코드를 가져다 썼는데, 이제는 이해를 조금은 했습니다!
+<br>
+나중에 멀티파트 폼데이터를 한번 다뤄보고싶네여 :)
+
+<br><br><br>

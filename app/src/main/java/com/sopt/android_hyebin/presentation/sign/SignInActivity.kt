@@ -7,7 +7,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.sopt.android_hyebin.R
 import com.sopt.android_hyebin.databinding.ActivitySignInBinding
-import com.sopt.android_hyebin.presentation.home.HomeActivity
+import com.sopt.android_hyebin.presentation.main.MainActivity
 import com.sopt.anroid_hyebin.util.BaseActivity
 import com.sopt.anroid_hyebin.util.toast
 
@@ -30,7 +30,7 @@ class SignInActivity :
             tvLogin.setOnClickListener {
                 if(etId.text.isNotEmpty() && etPw.text.isNotEmpty()){
                     toast(getString(R.string.sign_success))
-                    val intent = Intent(this@SignInActivity, HomeActivity::class.java)
+                    val intent = Intent(this@SignInActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

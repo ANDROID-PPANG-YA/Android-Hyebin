@@ -1,6 +1,8 @@
+
 plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -51,7 +53,7 @@ dependencies {
 
     // Glide
     implementation(ThirdPartyDependencies.glide)
-    implementation("androidx.appcompat:appcompat:1.4.0")
+    implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")
     implementation("com.github.bumptech.glide:okhttp3-integration:4.11.0")
 

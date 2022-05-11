@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sopt.android_hyebin">
+    package="com.sopt.android_hyebin" >
+
+    <!--권한추가-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -9,19 +12,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidHyebin">
+        android:theme="@style/Theme.AndroidHyebin" >
         <activity
-            android:name=".presentation.home.DetailActivity"
+            android:name=".presentation.profile.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.sign.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.home.HomeActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true" />
         <activity
             android:name=".presentation.sign.SignInActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,5 +32,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>

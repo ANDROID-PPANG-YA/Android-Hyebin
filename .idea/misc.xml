@@ -4,17 +4,40 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android-Hyebin/app/src/main/res/drawable-v24/rectangle_border_purple_10dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1435" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/ic_outline_person_outline_24.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/ic_outline_photo_camera_24.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_black_gradient.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_f6f5f9_border_gray_radius_5dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_gray_F7F6F9_5dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_gray_f7f6f9_5dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_main_purple_5dp.xml" value="0.1095" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_sopt_main_purple_5dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_sopt_sub_purple_5dp.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_fill_white_border_main_purple_radius_5dp.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/rectangle_purple_gradient.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/selector_bottom_navi.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/selector_rectangle_gray_F7F6F9_to_purple.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/selector_rectangle_gray_f7f6f9_to_purple.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/selector_rectangle_gray_to_purple.xml" value="0.1145" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/drawable/selector_text_gray_to_main_purple.xml" value="0.1" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_detail.xml" value="0.23356401384083045" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.128" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_follow.xml" value="0.2" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_follower.xml" value="0.15087719298245614" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_following.xml" value="0.2" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/fragment_repository.xml" value="0.21064814814814814" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_follow_list.xml" value="0.2" />
         <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_follower_list.xml" value="0.264" />
-        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.1" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.4" />
+        <entry key="..\:/Android-Hyebin/app/src/main/res/menu/menu.xml" value="0.16" />
       </map>
     </option>
   </component>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.sopt.android_hyebin.presentation.profile.ProfileViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/thesopt_deepgray"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/im_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                imageBind="@{data.User.image}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:text="@{data.User.name}"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/im_img"
+                tools:text="LeeHyebin" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:includeFontPadding="false"
+                android:text="@{data.User.age}"
+                android:textColor="@color/thesopt_ligthgray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                tools:text="id" />
+
+
+            <TextView
+                android:id="@+id/tv_mbti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="31dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@{data.User.mbti}"
+                android:textColor="@color/gray_8f"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_age"
+                app:layout_constraintStart_toStartOf="@+id/tv_age"
+                app:layout_constraintTop_toBottomOf="@+id/tv_age"
+                tools:text="mbti" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_follower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_rectangle_gray_f7f6f9_to_purple"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:paddingStart="45dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="45dp"
+            android:paddingBottom="13dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="13dp"
+            android:text="@string/home_follow_list"
+            android:textAlignment="center"
+            android:layout_marginEnd="8dp"
+            android:textColor="@drawable/selector_text_gray_to_main_purple"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_repository"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top" />
+
+        <TextView
+            android:id="@+id/tv_repository"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/selector_rectangle_gray_f7f6f9_to_purple"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:paddingStart="34dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="35dp"
+            android:paddingBottom="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/home_repository_list"
+            android:textAlignment="center"
+            android:textColor="@drawable/selector_text_gray_to_main_purple"
+            android:textSize="14sp"
+            android:layout_marginEnd="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_follower"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_follower" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
