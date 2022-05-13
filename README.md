@@ -550,3 +550,183 @@ class NestedScrollableHost : FrameLayout {
 나중에 멀티파트 폼데이터를 한번 다뤄보고싶네여 :)
 
 <br><br><br>
+
+
+# AndroidKoddakZ-BINNING
+
+# 4️⃣ Fourth Week
+
+|화면 녹화|
+|---|
+|![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/69586104/168269428-9566ad33-ae2a-4e5b-b4ea-1e853198181b.gif)!
+
+
+<br><br>
+
+## LEVEL1 & 3
+
+<br><br>
+
+**PostMan 테스트 이미지 첨부**
+|SignUp|SignIn|
+|---|---|
+|![1](https://user-images.githubusercontent.com/69586104/168269676-dad15b8e-af83-4c87-88f2-7fcec0846d0f.png)|![2](https://user-images.githubusercontent.com/69586104/168269679-510ff26c-78f2-4865-ab9c-f1a0d115a967.png)|
+<br><br>
+
+😥편의상 signUp 서버통신 코드만 첨부합니다!😥
+
+**RequestData**
+
+
+```kotlin
+data class RequestSignUpData(
+    var email: String,
+    var name: String,
+    var password: String
+)
+```
+
+<br><br>
+
+**ResponseData**
+
+```kotlin
+data class ResponseSignUpData(
+    val data: Data,
+    val message: String,
+    val status: Int,
+    val success: Boolean
+) {
+    data class Data(
+        val id: Int
+    )
+}
+```
+
+<br><br>
+
+
+**SampleService**
+
+```kotlin
+    @POST("auth/signup")
+    suspend fun postSignUp(
+        @Body body: RequestSignUpData
+    ): ResponseSignUpData
+```
+
+<br><br>
+
+
+
+**ServiceCreator**
+
+```kotlin
+ private const val BASE_URL = "http://13.124.62.236/"
+    private val retrofit : Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val signInService : SignInService = retrofit.create(SignInService::class.java)
+    val signUpService : SignUpService = retrofit.create(SignUpService::class.java)
+}
+
+ //회원가입
+    fun postSignUp(requestSignUpData: RequestSignUpData) {
+        viewModelScope.launch {
+            kotlin.runCatching { ServiceCreator.signUpService.postSignUp(requestSignUpData) }
+                .onSuccess {
+                    _signUp.value = it
+                    Log.d("SignUp", "서버 통신 성공")
+
+                }
+                .onFailure {
+                    it.printStackTrace()
+                    Log.d("SignUp", "서버 통신 실패")
+                }
+        }
+    }
+```
+
+<br><br>
+
+**SignViewModel**
+
+```kotlin
+//로그인 request
+    var requestSignIn = RequestSignInData("","")
+
+    //회원가입
+    private val _signUp = MutableLiveData<ResponseSignUpData>()
+    val signUp : LiveData<ResponseSignUpData>
+        get() = _signUp
+```
+
+<br><br>
+
+
+**SignUpActivity**
+```kotlin
+ //회원가입 완료 버튼 이벤트
+    private fun initFinishBtn() {
+        binding.apply {
+            tvFinish.setOnClickListener {
+                if (etName.text.isNotEmpty() && etId.text.isNotEmpty() && etPw.text.isNotEmpty()) {
+                    signUp()
+                    signViewModel.signUp.observe(this@SignUpActivity) {
+                        if (it.success) {
+                            val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+                            intent
+                                .putExtra("id", etId.text.toString())
+                                .putExtra("pw", etPw.text.toString())
+                            setResult(RESULT_OK, intent)
+                            finish()
+                        } else {
+                            toast("서버 통신 실패")
+                        }
+                    }
+                } else {
+                    toast(getString(R.string.sign_up_fail))
+                }
+            }
+        }
+    }
+
+    private fun signUp() {
+        signViewModel.requestSignUp.email = binding.etId.text.toString()
+        signViewModel.requestSignUp.name = binding.etName.text.toString()
+        signViewModel.requestSignUp.password = binding.etPw.text.toString()
+
+        signViewModel.postSignUp(
+            RequestSignUpData(
+                signViewModel.requestSignUp.email,
+                signViewModel.requestSignUp.name,
+                signViewModel.requestSignUp.password
+            )
+        )
+    }
+```
+
+네... 2레벨은 후에 하겠습니다..
+
+그리고 비동기처리.. 위에처럼 코루틴 사용했습니당..
+
+<br><br><br><br>
+***
+<br>
+
+**🤍이번 과제를 통해 배운 내용 & 성장한 내용🤍**
+
+<br>
+
+**☝코루틴을 익혔습니다**
+<br>
+아직은 마음으로만 느낀 코루틴.. 어제 스터디에서 공부하고 오늘 코드를 짰습니다
+<br>
+하지만 아직 부족한 부분이 많은 거 같아서 더 꼼꼼하게 코드를 확인하면서 짜고싶었는데... 다음에 시간 될 때 리팩토링 하겠습니다
+<br>
+2레벨 29기때도 못해서 너무 아쉬웠는데 이번에는 꼬옥 앱잼전에 해보겠습니다! 나중엔 콜백으로도 코드
+
+
+<br><br><br>
