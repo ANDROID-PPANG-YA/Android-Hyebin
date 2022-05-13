@@ -10,6 +10,7 @@ object ServiceCreator {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val signService : SignService = retrofit.create(SignService::class.java)
+    val signInService : SignInService = retrofit.create(SignInService::class.java)
+    val signUpService : SignUpService = retrofit.create(SignUpService::class.java)
 
 }

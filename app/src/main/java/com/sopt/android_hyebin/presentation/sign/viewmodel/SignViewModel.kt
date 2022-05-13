@@ -34,7 +34,7 @@ class SignViewModel() : ViewModel() {
     //회원가입
     fun postSignUp(requestSignUpData: RequestSignUpData) {
         viewModelScope.launch {
-            kotlin.runCatching { ServiceCreator.signService.postSignUp(requestSignUpData) }
+            kotlin.runCatching { ServiceCreator.signUpService.postSignUp(requestSignUpData) }
                 .onSuccess {
                     _signUp.value = it
                     Log.d("SignUp", "서버 통신 성공")
@@ -50,7 +50,7 @@ class SignViewModel() : ViewModel() {
     //로그인
     fun postSignIn(requestSignInData: RequestSignInData) {
         viewModelScope.launch {
-            kotlin.runCatching { ServiceCreator.signService.postSignIn(requestSignInData) }
+            kotlin.runCatching { ServiceCreator.signInService.postSignIn(requestSignInData) }
                 .onSuccess {
                     _signIn.value = it
                     Log.d("SignIn", "서버 통신 성공")
