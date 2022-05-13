@@ -70,4 +70,12 @@ dependencies {
     implementation(AndroidXDependencies.viewModelKtx)
     implementation(AndroidXDependencies.liveDataKtx)
 
+    // Gson
+    implementation(ThirdPartyDependencies.gson)
+
+    // Retrofit
+    implementation(ThirdPartyDependencies.retrofit)
+    implementation(ThirdPartyDependencies.retrofitGsonConverter)
+    implementation("com.squareup.retrofit2:retrofit-converters:2.4.0")
+
 }
