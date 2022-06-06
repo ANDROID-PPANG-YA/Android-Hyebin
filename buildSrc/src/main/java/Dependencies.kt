@@ -19,6 +19,7 @@ object Versions {
     const val biometric_version = "1.1.0"
     const val ktlint_version = "10.0.0"
     const val glide_version = "4.12.0"
+    const val gson_version = "2.8.6"
     const val retrofit_version = "2.9.0"
     const val junit_version = "4.13.2"
     const val espresso_version = "3.3.0"
@@ -58,6 +59,8 @@ object ThirdPartyDependencies {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide_version}"
     const val retrofitGsonConverter =
         "com.squareup.retrofit2:converter-gson:${Versions.retrofit_version}"
+    const val gson = "com.google.code.gson:gson:${Versions.gson_version}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit_version}"
 }
 
 
